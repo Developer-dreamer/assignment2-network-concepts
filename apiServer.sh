@@ -1,9 +1,16 @@
 #!/bin/bash
 
-read_db() {
-  #TODO: implement reding from db
-}
+read_db(command_type, param) {
+  readonly DB="db.txt"
 
-handshake() {
+  if [[ ! -e $DB]]; then
+    echo "Error with database"
+    exit -1
+  fi 
 
+  while IPF=, read movie, director, year; do 
+    if [$param == $year || $param == $director]; then
+      echo "movie"
+    fi 
+  do < $DB 
 }
